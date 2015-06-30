@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "docker-container-metrics": {
+      "type": "metric",
+      "command": "metrics-docker-container.rb",
+      "subscribers": [
+        "all"
+      ],
+      "interval": 1
+    }
+  }
+}

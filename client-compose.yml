@@ -1,0 +1,10 @@
+client:
+  build: .
+  command: client
+  environment:
+    CLIENT_NAME: bob
+    RABBITMQ_HOST: 192.168.59.103
+    RUNTIME_INSTALL: docker
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+    - conf.d/:/etc/sensu/conf.d/

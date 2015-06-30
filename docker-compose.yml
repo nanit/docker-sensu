@@ -1,0 +1,35 @@
+api:
+  build: .
+  command: api
+  links:
+    - rabbitmq
+    - redis
+  environment:
+    RUNTIME_INSTALL: docker
+  volumes:
+    - conf.d/:/etc/sensu/conf.d/
+server:
+  build: .
+  command: server
+  links:
+    - rabbitmq
+    - redis
+    - api
+  environment:
+    RUNTIME_INSTALL: docker
+  volumes:
+    - conf.d/:/etc/sensu/conf.d/
+uchiwa:
+  image: uchiwa/uchiwa
+  links:
+    - api:sensu
+  ports:
+    - '80:3000'
+  volumes:
+    - ./uchiwa/:/config
+rabbitmq:
+  image: rabbitmq:3.5-management
+  ports:
+    - '5672:5672'
+redis:
+  image: redis

@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:wheezy
 MAINTAINER Shane Starcher <shanestarcher@gmail.com>
 
 RUN apt-get update && apt-get install -y wget ca-certificates && apt-get -y clean
