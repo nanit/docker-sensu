@@ -1,5 +1,6 @@
 api:
   build: .
+  restart: always
   command: api
   links:
     - rabbitmq
@@ -11,6 +12,7 @@ api:
     - conf.d/:/etc/sensu/conf.d/
 server:
   build: .
+  restart: always
   command: server
   links:
     - rabbitmq
@@ -23,6 +25,7 @@ server:
     - conf.d/:/etc/sensu/conf.d/
 uchiwa:
   image: uchiwa/uchiwa
+  restart: always
   links:
     - api:sensu
   ports:
@@ -31,7 +34,9 @@ uchiwa:
     - ./uchiwa/:/config
 rabbitmq:
   image: rabbitmq:3.5-management
+  restart: always
   ports:
     - '5672:5672'
 redis:
   image: redis
+  restart: always
