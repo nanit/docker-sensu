@@ -2,7 +2,7 @@
 {
     "rabbitmq": {
         "port": 5672,
-        "host": "192.168.59.103",
+        "host": "rabbitmq",
         "user": "guest",
         "password": "guest",
         "vhost": "/"
