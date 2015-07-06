@@ -1,10 +1,9 @@
 client:
   build: .
   command: client
+  env_file: .env
   environment:
-    CLIENT_NAME: bob
-    RUNTIME_INSTALL: disk-checks
-    RABBITMQ_HOST:
+    - RABBITMQ_HOST
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
     - conf.d/:/etc/sensu/conf.d/
