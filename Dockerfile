@@ -32,10 +32,10 @@ ADD templates /etc/sensu/templates
 ADD bin /bin/
 
 #Plugins needed for handlers
-RUN /bin/install hipchat mailer pagerduty
+RUN /bin/install slack mailer
 
 #Plugins needed for checks and maybe handlers
-RUN /bin/install docker aws http graphite ftp consul
+RUN /bin/install docker http
 
 EXPOSE 4567
 VOLUME ["/etc/sensu/conf.d"]

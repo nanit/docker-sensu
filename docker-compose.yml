@@ -5,7 +5,8 @@ api:
     - rabbitmq
     - redis
   environment:
-    RUNTIME_INSTALL: docker
+    RUNTIME_INSTALL: disk-checks
+    LOG_LEVEL: DEBUG
   volumes:
     - conf.d/:/etc/sensu/conf.d/
 server:
@@ -16,7 +17,8 @@ server:
     - redis
     - api
   environment:
-    RUNTIME_INSTALL: docker
+    RUNTIME_INSTALL: disk-checks
+    LOG_LEVEL: DEBUG
   volumes:
     - conf.d/:/etc/sensu/conf.d/
 uchiwa:
