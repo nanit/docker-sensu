@@ -3,7 +3,7 @@ client:
   command: client
   env_file: .env
   environment:
-    - RABBITMQ_HOST
+    - SENSU_RABBITMQ_HOST
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
     - conf.d/:/etc/sensu/conf.d/
