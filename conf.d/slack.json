@@ -1,0 +1,13 @@
+{
+  "handlers": {
+    "slack": {
+      "type": "pipe",
+      "command": "handler-slack.rb"
+     }
+  },
+  "slack": {
+    "webhook_url": "https://hooks.slack.com/services/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",
+    "channel": "#alerts",
+    "bot_name": "sensu"
+  }
+}

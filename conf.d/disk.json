@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "disk": {
+      "command": "check-disk-usage.rb",
+      "handlers": ["slack"],
+      "subscribers": [
+        "all"
+      ],
+      "interval": 10,
+      "occurrences": 1,
+      "refresh": 1800
+    }
+  }
+}
