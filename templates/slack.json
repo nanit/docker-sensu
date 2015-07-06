@@ -6,7 +6,7 @@
      }
   },
   "slack": {
-    "webhook_url": "https://hooks.slack.com/services/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",
+    "webhook_url": "{{ .Env.SLACK_WEBHOOK_URL }}",
     "channel": "#alerts",
     "bot_name": "sensu"
   }
