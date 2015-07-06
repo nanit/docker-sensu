@@ -6,9 +6,8 @@
       "subscribers": [
         "all"
       ],
-      "interval": 10,
-      "occurrences": 1,
-      "refresh": 1800
+      "interval": 3600,
+      "occurrences": 1
     }
   }
 }
