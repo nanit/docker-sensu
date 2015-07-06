@@ -2,8 +2,6 @@ client:
   build: .
   command: client
   env_file: .env
-  environment:
-    - SENSU_RABBITMQ_HOST
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
     - conf.d/:/etc/sensu/conf.d/
