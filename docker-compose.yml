@@ -10,6 +10,7 @@ api:
     LOG_LEVEL: DEBUG
   volumes:
     - conf.d/:/etc/sensu/conf.d/
+
 server:
   build: .
   restart: always
@@ -23,15 +24,22 @@ server:
     LOG_LEVEL: DEBUG
   volumes:
     - conf.d/:/etc/sensu/conf.d/
+
 uchiwa:
   image: uchiwa/uchiwa
   restart: always
   links:
     - api:sensu
-  ports:
-    - '80:3000'
   volumes:
     - ./uchiwa/:/config
+
+nginx:
+  build: nginx/.
+  links:
+    - uchiwa
+  ports:
+    - "80:80"
+
 rabbitmq:
   image: rabbitmq:3.5-management
   restart: always
