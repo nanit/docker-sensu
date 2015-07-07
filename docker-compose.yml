@@ -5,9 +5,7 @@ api:
   links:
     - rabbitmq
     - redis
-  environment:
-    RUNTIME_INSTALL: disk-checks
-    LOG_LEVEL: DEBUG
+  env_file: .env
   volumes:
     - conf.d/:/etc/sensu/conf.d/
 
@@ -19,9 +17,7 @@ server:
     - rabbitmq
     - redis
     - api
-  environment:
-    RUNTIME_INSTALL: disk-checks
-    LOG_LEVEL: DEBUG
+  env_file: .env
   volumes:
     - conf.d/:/etc/sensu/conf.d/
 
