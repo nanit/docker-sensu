@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "rabbitmq": {
+      "command": "check-rabbitmq-alive.rb --host rabbit",
+      "handlers": ["slack"],
+      "subscribers": [
+        "rabbitmq"
+      ],
+      "interval": 60,
+      "occurrences": 1,
+      "refresh": 1800
+    }
+  }
+}
