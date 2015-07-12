@@ -5,7 +5,7 @@ api:
   links:
     - rabbitmq
     - redis
-  env_file: .env
+  env_file: server.env
   volumes:
     - conf.d/:/etc/sensu/conf.d/
 
@@ -17,7 +17,7 @@ server:
     - rabbitmq
     - redis
     - api
-  env_file: .env
+  env_file: server.env
   volumes:
     - conf.d/:/etc/sensu/conf.d/
 

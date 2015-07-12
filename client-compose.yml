@@ -2,7 +2,7 @@ client:
   build: .
   restart: always
   command: client
-  env_file: .env
+  env_file: client.env
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
     - conf.d/:/etc/sensu/conf.d/
