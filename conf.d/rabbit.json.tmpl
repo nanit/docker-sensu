@@ -1,7 +1,7 @@
 {
   "checks": {
     "rabbitmq": {
-      "command": "check-rabbitmq-alive.rb --host rabbit",
+      "command": "check-rabbitmq-alive.rb --host rabbit --username {{ .Env.USERNAME }} --password {{ .Env.PASSWORD }}",
       "handlers": ["slack"],
       "subscribers": [
         "rabbitmq"
